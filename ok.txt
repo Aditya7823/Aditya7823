@@ -1,0 +1,158 @@
+"Understanding the Queue": {
+    "easy": [
+        "What is a queue and what are its primary characteristics?",
+        "Why is queue called a FIFO data structure?",
+        "Give a real-life example that resembles a queue.",
+        "What are enqueue and dequeue operations?",
+        "Can a queue be implemented using an array? If yes, how?",
+        "When would a queue be considered full or empty?",
+        "How is a queue different from a stack?",
+        "List the types of queues you know (simple, circular, priority, deque).",
+        "How is a linear queue different from a circular queue?",
+        "What does the 'front' and 'rear' pointer mean in a queue?", "What is a queue and what are its primary characteristics?",
+    "Why is queue called a FIFO data structure?",
+    "Give a real-life example that resembles a queue.",
+    "What are enqueue and dequeue operations?",
+    "When would a queue be considered full or empty?",
+    "How is a queue different from a stack?",
+    "List the types of queues you know (simple, circular, priority, deque).",
+    "How is a linear queue different from a circular queue?",
+    "What does the 'front' and 'rear' pointer mean in a queue?",
+    "Can a queue be implemented using an array or a linked list? How?"
+ 
+    ],
+    "medium": [
+        # Theory-based
+        "How would you implement a queue using two stacks? What is the time complexity?",
+        "What is the difference between a queue and a circular queue? Explain with examples.",
+        "Why is a circular queue more efficient than a linear queue in fixed-size array implementations?",
+        "Explain front and rear pointer movement in circular queue implementation.",
+        "How do underflow and overflow conditions work in a queue?",
+        "Compare array-based vs linked-list-based implementation of a queue.",
+        "How is queue used in level-order traversal of a binary tree?",
+        "Explain queue behavior in OS process scheduling.",
+        "What are the advantages of using a doubly-ended queue (deque)?",
+        "How is a queue used in breadth-first search (BFS)?",
+        "Why is a queue preferred in producer-consumer problems?",
+        "How do queues assist in CPU job scheduling or round-robin algorithms?",
+        "Explain why queues are suitable for message buffering in network devices.",
+        
+        # Simulation-based
+        "Given a queue with initial elements {initial_elements}, perform: {operations}. What is the final state of the queue?",
+        "Simulate enqueue and dequeue operations with initial queue {initial_elements} and actions {operations}.",
+        "You manage a customer service queue with customers {initial_elements}. Apply operations: {operations}. What is the queue now?",
+        "Model a print queue with tasks {initial_elements}. After {operations}, what tasks are still in the queue?",
+        "A queue of patients has IDs {initial_elements}. After simulating {operations}, what’s the patient at the front?",
+        "Simulate a scenario where a queue holds tasks arriving every minute, and each task takes 2 minutes to process. With inputs {initial_elements} and actions {operations}, find pending tasks.",
+        "You’re simulating a ticket counter. Queue starts with people {initial_elements}. Simulate: {operations}. Who is currently being served?",
+        "A circular queue of size {size} starts with {initial_elements}. After operations {operations}, what is the state of the queue?",
+        "Simulate packet processing in a network router using a queue of packets {initial_elements} and processing commands {operations}.",
+        "Design a system where a queue processes tasks with delays. Given {initial_elements} and timed operations {operations}, what’s the result?",
+        "You’re simulating a school lunch line with students {initial_elements}. After actions {operations}, who remains and who was served?",
+        "If enqueue and dequeue happen in a round-robin fashion, starting from {initial_elements}, after {operations}, what’s left in the queue?",
+        "You maintain a food delivery queue. Orders {initial_elements} are received and processed as per: {operations}. Final order status?",
+        "Simulate a parking lot queue system where cars enter and exit in the order given by: {operations}. Starting state: {initial_elements}.",
+        "In an event ticketing app, simulate a queue where customers {initial_elements} are added and removed as per {operations}. What’s the updated list?"
+        , "How would you implement a queue using two stacks? What is the time complexity?",
+    "What are the use cases where circular queues are more efficient than linear queues?",
+    "Explain front and rear pointer movement in circular queue with examples.",
+    "Compare array-based vs linked-list-based implementation of a queue.",
+    "What is a deque and how is it different from a normal queue?",
+    "How is queue used in level-order traversal of a binary tree?",
+    "Why is queue preferred in producer-consumer problems?",
+    "How do queues assist in CPU job scheduling (Round-Robin)?",
+    "Why is a priority queue used in Dijkstra’s Algorithm?",
+    "How can you use a queue to implement a moving average over a stream of numbers?",
+    "How would you design a real-time messaging buffer using a queue?",
+    "Explain the difference between min-heap and max-heap in terms of priority queues.",
+    "How would you implement a queue that also returns the maximum value at any time?",
+
+    ],
+    "hard": [
+        # Conceptual + Simulation-based
+        "Design a queue that supports fetching the minimum element in O(1) time.",
+        "How would you implement a queue that can dynamically resize when full?",
+        "Create a queue supporting insertions at both ends. What are the use cases?",
+        "Simulate a multi-threaded consumer queue with {data_type} inputs and operations {operations}. How does thread safety affect the outcome?",
+        "You’re building a print server: simulate printer jobs arriving in queue {initial_elements} and processed by different printers via {operations}.",
+        "Analyze a priority queue implementation and simulate task insertion/removal using priority: {operations}.",
+        "Simulate a hospital emergency room: patients in queue {initial_elements} are treated based on urgency via {operations}. What’s the final patient order?",
+        "Model a real-time messaging app: messages enter queue {initial_elements}. Simulate delivery/timeout failures using {operations}. What messages are undelivered?",
+        "Design a garbage collection system where outdated references are held in a queue. Simulate removal and enqueue using {operations}.",
+        "You’re building a distributed system where job queues sync across servers. Simulate with job set {initial_elements} and syncing actions {operations}.",
+        "Simulate CPU job scheduling using Round Robin with time quantum. Initial jobs: {initial_elements}. Operations: {operations}. Show remaining jobs and execution order.",
+        "A queue of sensor readings {initial_elements} must be processed in real-time. Simulate delay, enqueue, and overflow using {operations}. What readings remain?",
+        "You’re designing an elevator request system. People queue up with {initial_elements}. After {operations}, what floor requests are still pending?",
+        "Implement a time-decayed queue where each element expires after 5 mins. Given enqueue times and {operations}, what elements are still valid?",
+        "Create a simulation of bus boarding queue at a smart terminal. Starting from {initial_elements} and operations {operations}, simulate passenger flow."
+  
+  {
+      "question": "You're building a ride-sharing service like Uber. Each request comes with a priority (VIP or Normal). How would you implement the matching logic using a priority queue?",
+      "requirement": "Use Python's heapq module with a tuple of (priority_level, timestamp, request_id) to simulate priority queue logic.",
+      "starter_code": "import heapq\nrequests = []\nheapq.heappush(requests, (0, timestamp, 'VIP123'))\n# lower priority value = higher priority"
+    },
+    {
+      "question": "You're designing a food delivery system. Orders have deadlines and priorities. Use a min-heap to always deliver the earliest deadline orders.",
+      "requirement": "Implement a function processOrders(orders) where each order is (deadline, priority, order_id)",
+      "starter_code": "import heapq\ndef processOrders(orders):\n    heapq.heapify(orders)\n    while orders:\n        deadline, priority, order_id = heapq.heappop(orders)\n        print(f'Delivering {order_id}')"
+    },
+    {
+      "question": "Implement a task scheduler where each task has a cooldown period. Use a queue + heap to schedule tasks optimally.",
+      "requirement": "Leverage a max heap for task frequency and a queue to store cooldown.",
+      "starter_code": "from collections import deque\nimport heapq\n\n# tasks = ['A','A','A','B','B','C']\ndef scheduleTasks(tasks, cooldown):\n    pass  # Fill implementation"
+    },
+    {
+      "question": "Design a real-time event manager using deque where events expire after T seconds.",
+      "requirement": "Use collections.deque to append events and remove old ones.",
+      "starter_code": "from collections import deque\nimport time\n\nevents = deque()\ndef add_event(event_time, event):\n    events.append((event_time, event))\n    while events and events[0][0] < time.time() - T:\n        events.popleft()"
+    },
+    {
+      "question": "Simulate a call center where incoming calls are processed by available agents. Calls are queued, and each has a priority.",
+      "requirement": "Use a max-heap to handle urgent calls first."
+    },
+    {
+      "question": "LeetCode: Sliding Window Maximum. Explain how to use a deque to maintain max efficiently.",
+      "requirement": "Implement maxSlidingWindow(nums, k) using deque to store indices.",
+      "starter_code": "from collections import deque\ndef maxSlidingWindow(nums, k):\n    q, res = deque(), []\n    # implement logic"
+    },
+    {
+      "question": "In a game server queue, each player has a rank. Use a priority queue to serve highest rank players first.",
+      "starter_code": "import heapq\nplayers = []\nheapq.heappush(players, (-rank, timestamp, player_id))"
+    },
+    {
+      "question": "Sensor Data Stream: Each reading has a timestamp. Remove old readings beyond 5 seconds.",
+      "starter_code": "from collections import deque\ndata = deque()\n# add (timestamp, value) and remove if older than current_time - 5"
+    },
+    {
+      "question": "Stream of stock prices: Maintain moving average of last K values.",
+      "starter_code": "from collections import deque\nclass StockAverage:\n    def __init__(self, k):\n        self.q = deque()\n        self.k = k\n    def addPrice(self, price):\n        self.q.append(price)\n        if len(self.q) > self.k:\n            self.q.popleft()\n    def getAverage(self):\n        return sum(self.q) / len(self.q)"
+    },
+    {
+      "question": "LeetCode: Design Hit Counter – count hits in last 5 minutes.",
+      "starter_code": "from collections import deque\nclass HitCounter:\n    def __init__(self):\n        self.hits = deque()\n    def hit(self, timestamp):\n        self.hits.append(timestamp)\n    def getHits(self, timestamp):\n        while self.hits and self.hits[0] <= timestamp - 300:\n            self.hits.popleft()\n        return len(self.hits)"
+    },
+    {
+      "question": "Chat App Buffer: FIFO messages but urgent messages go to front. Use deque.",
+      "starter_code": "from collections import deque\nclass ChatBuffer:\n    def __init__(self):\n        self.buffer = deque()\n    def addMessage(self, msg, urgent=False):\n        if urgent:\n            self.buffer.appendleft(msg)\n        else:\n            self.buffer.append(msg)"
+    },
+    {
+      "question": "Hospital Management: Patients treated by severity. Normal in queue, critical in min-heap.",
+      "starter_code": "import heapq\ncritical = []\nnormal = deque()"
+    },
+    {
+      "question": "Robot Task Processing: FIFO vs Priority Queues merged.",
+      "requirement": "One FIFO queue and one min-heap. Output merged execution order."
+    },
+    {
+      "question": "LeetCode: Dota2 Senate. How to simulate voting queue?",
+      "starter_code": "from collections import deque\ndef predictPartyVictory(senate):\n    r, d = deque(), deque()\n    # simulate turn by turn banning"
+    },
+    {
+      "question": "Elevator System: Floor requests in queue + emergency override in min-heap.",
+      "requirement": "Write function that decides next floor to serve based on both."
+    }
+  
+  
+  
+    ]
+}
