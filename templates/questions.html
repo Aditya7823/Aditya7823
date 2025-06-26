@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Question Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f7f9fc;
+            padding: 40px;
+        }
+        h1 {
+            color: #1a1a3d;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        select, button, input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .question-box {
+            background: #fff;
+            padding: 20px;
+            border-left: 6px solid #ff8c00;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .result-box {
+            background: #e7f1ff;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔁 Queue & Priority Queue Question Generator</h1>
+
+    <form method="post">
+        <label>Select Difficulty:</label><br>
+        <select name="difficulty" required>
+            <option value="">--Choose Difficulty--</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <br><button type="submit">Generate</button>
+    </form>
+
+    {% if question %}
+        <div class="question-box">
+            <strong>Generated Question:</strong>
+            <p>{{ question }}</p>
+        </div>
+
+        <form method="post">
+            <label for="user_answer">Your Answer:</label><br>
+            <input type="text" name="user_answer" required>
+            <input type="hidden" name="question" value="{{ question }}">
+            <br><button type="submit">Check Answer</button>
+        </form>
+    {% endif %}
+
+    {% if result %}
+        <div class="result-box">
+            <strong>Result:</strong>
+            <p>{{ result }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
